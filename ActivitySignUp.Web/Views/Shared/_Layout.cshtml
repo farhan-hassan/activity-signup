@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - OCAS</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    <link href="~/content/site.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container main-body-container">
+        <div class="row">
+            <div class="col-md-12">
+                <p class="lead">
+                   <a href="https://www.ocas.ca/" target="_blank"><img class="img-responsive" alt="OCAS Logo" src="~/images/ocas-logo.png" /></a> 
+                </p>
+            </div>
+            <div class="col-md-12">
+                <h3>@ViewBag.Title</h3>
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <footer>This project is designed and developed by <a href="https://www.linkedin.com/in/farhanhassan0/" target="_blank">Farhan Hassan</a></footer>
+    @RenderSection("Scripts", false);
+</body>
+</html>

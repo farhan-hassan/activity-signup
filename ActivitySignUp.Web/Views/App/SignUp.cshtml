@@ -1,0 +1,44 @@
+﻿@model SubscriptionViewModel
+@{
+    ViewBag.Title = "Activity Sign-up";
+}
+@section Scripts {
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js"></script>
+}
+<form asp-action="signup" method="post" role="form">
+    <h6>You're just one step away from subscribing to a fun activity.</h6>
+
+    <div class="col-md-12 m-10" asp-validation-summary="ModelOnly">
+    </div>
+    <div class="col-md-12 m-10">
+        <label class="col-md-2" asp-for="FirstName">First Name</label>
+        <input class="col-md-4" asp-for="FirstName" />
+        <span class="text-danger" asp-validation-for="FirstName"></span>
+    </div>
+    <div class="col-md-12 m-10">
+        <label class="col-md-2" asp-for="LastName">Last Name</label>
+        <input class="col-md-4" asp-for="LastName" />
+        <span class="text-danger" asp-validation-for="LastName"></span>
+    </div>
+    <div class="col-md-12 m-10">
+        <label class="col-md-2" asp-for="Email">Email</label>
+        <input class="col-md-4" asp-for="Email" />
+        <span class="text-danger" asp-validation-for="Email"></span>
+    </div>
+    <div class="col-md-12 m-10">
+        <label class="col-md-2" asp-for="ActivityId">Fun Activity</label>
+        <select class="col-md-4" asp-for="ActivityId" asp-items="@(new SelectList(ViewBag.FunActivities,"ActivityId","Name"))">
+            <option value="" selected disabled>- Select a Fun Activity -</option>
+        </select>
+        <span class="text-danger" asp-validation-for="ActivityId"></span>
+    </div>
+    <div class="col-md-12 m-10">
+        <label class="col-md-2" asp-for="Comments">Comments</label>
+        <textarea class="col-md-4" asp-for="Comments"></textarea>
+        <span class="text-danger" asp-validation-for="Comments"></span>
+    </div>
+    <div class="col-md-11 m-10 text-center">
+        <input type="submit" class="btn btn-success" title="button" value="SIGN UP" />
+    </div>
+</form>

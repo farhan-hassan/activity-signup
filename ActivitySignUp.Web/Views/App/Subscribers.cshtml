@@ -1,0 +1,11 @@
+﻿@model IEnumerable<SubscriptionViewModel>
+
+<p> @Model.Count() person(s) have subscribed to this activity: </p>
+<ul>
+    @foreach(var p in Model)
+    {
+        <li><em>@p.FirstName @p.LastName</em></li>
+    }
+</ul>
+<a asp-controller="App" asp-action="Index" class="btn btn-success"> Back to Home</a>
+
